@@ -9,6 +9,7 @@ package groupprojectmusic;
  *
  * @author user
  */
+import javax.swing.JFrame;
 import java.util.Scanner;
 public class Music {
     String musicPlatform,location;

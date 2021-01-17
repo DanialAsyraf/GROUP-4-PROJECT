@@ -1,10 +1,18 @@
 
 package groupprojectmusic;
 
+import java.io.BufferedWriter;
 import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.File;
 import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.DefaultListModel;
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -61,11 +69,18 @@ public class TikTokGui extends javax.swing.JFrame {
         jButton10 = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
+        dltbutton = new javax.swing.JButton();
+        exitbutton = new javax.swing.JButton();
+        importbutton = new javax.swing.JButton();
+        backbutton = new javax.swing.JButton();
+        importbutton1 = new javax.swing.JButton();
+        btnExport = new javax.swing.JButton();
 
         jLabel1.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
         jLabel1.setText("Create TikTok Account");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setBackground(new java.awt.Color(51, 51, 51));
@@ -82,7 +97,7 @@ public class TikTokGui extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(331, 331, 331)
                 .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 308, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(351, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -140,7 +155,7 @@ public class TikTokGui extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 320, -1, -1));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 320, -1, -1));
 
         jButton2.setText("Clear");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -148,7 +163,7 @@ public class TikTokGui extends javax.swing.JFrame {
                 jButton2ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 320, -1, -1));
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 320, -1, -1));
 
         birthlab.setForeground(new java.awt.Color(255, 0, 0));
         getContentPane().add(birthlab, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 160, 110, 20));
@@ -290,20 +305,17 @@ public class TikTokGui extends javax.swing.JFrame {
         jLabel9.setText("Create TikTok Account");
         getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 110, -1, -1));
 
-        jButton10.setText("Print");
+        jButton10.setText("Add record");
         jButton10.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton10ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton10, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 320, -1, -1));
+        getContentPane().add(jButton10, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 320, -1, -1));
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+
             },
             new String [] {
                 "Birthday", "Username", "Email", "Phone No."
@@ -312,6 +324,54 @@ public class TikTokGui extends javax.swing.JFrame {
         jScrollPane2.setViewportView(jTable1);
 
         getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 370, 410, 110));
+
+        dltbutton.setText("Delete");
+        dltbutton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                dltbuttonActionPerformed(evt);
+            }
+        });
+        getContentPane().add(dltbutton, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 490, -1, -1));
+
+        exitbutton.setText("Exit");
+        exitbutton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                exitbuttonActionPerformed(evt);
+            }
+        });
+        getContentPane().add(exitbutton, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 490, -1, -1));
+
+        importbutton.setLabel("Import Data");
+        importbutton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                importbuttonActionPerformed(evt);
+            }
+        });
+        getContentPane().add(importbutton, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 490, -1, -1));
+
+        backbutton.setText("Back");
+        backbutton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                backbuttonActionPerformed(evt);
+            }
+        });
+        getContentPane().add(backbutton, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 490, -1, -1));
+
+        importbutton1.setLabel("Import Data");
+        importbutton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                importbutton1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(importbutton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 490, -1, -1));
+
+        btnExport.setText("Print Data");
+        btnExport.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnExportActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnExport, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 490, -1, -1));
 
         pack();
         setLocationRelativeTo(null);
@@ -355,11 +415,11 @@ public class TikTokGui extends javax.swing.JFrame {
     }else{
             
         
-        JOptionPane.showMessageDialog(null,"Validation sucess");
+        JOptionPane.showMessageDialog(null,"Validation success");
     }//GEN-LAST:event_jButton1ActionPerformed
     }
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
+        
         
         birth.setText(null);
         username.setText(null);
@@ -374,7 +434,7 @@ public class TikTokGui extends javax.swing.JFrame {
         int val = jList1.getModel().getSize();
         PrintWriter writer = null;
         try {
-            writer = new PrintWriter("List.txt");
+            writer = new PrintWriter("tiktokusers.txt");
             
             writer.println(val);
             for(int i=0;i<val;i++) {
@@ -413,7 +473,7 @@ public class TikTokGui extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton8ActionPerformed
 
     private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
-        // TODO add your handling code here:
+        
         if (flag) {
         BufferedReader br = null;
         try{
@@ -461,16 +521,113 @@ public class TikTokGui extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton10ActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-       JOptionPane.showMessageDialog(null,"Comedy" +"\nIt's comedy and prank videos");
+       JOptionPane.showMessageDialog(null,"Comedy" +"\nIt's comedy and prank videos"+"\n" 
+               +"\nTips for making Comedy Videos on Tiktok"
+               +"\n1. Funny Content"
+               +"\n2. Real-Time Engagement"
+               +"\n3. Use TikTok filters & participate in challenges"
+               +"\n4. Pay attention to the background"
+               +"\n5. Use a versatile tool to edits videos");
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-       JOptionPane.showMessageDialog(null,"Sing" +"\nIt's for musicians");
+       JOptionPane.showMessageDialog(null,"Sing" +"\nIt's for musicians"+"\n" 
+               +"\nTips for making Sing Videos on Tiktok"
+               +"\n1. Singing Content"
+               +"\n2. Real-Time Engagement"
+               +"\n3. Use TikTok filters & participate in challenges"
+               +"\n4. Pay attention to the background"
+               +"\n5. Use a versatile tool to edits videos");
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
-      JOptionPane.showMessageDialog(null,"Dance" +"\nMaking a TikTok Dances");
+      JOptionPane.showMessageDialog(null,"Dance" +"\nMaking a TikTok Dances"+"\n" 
+               +"\nTips for making Dance Videos on Tiktok"
+               +"\n1. Dance Content"
+               +"\n2. Real-Time Engagement"
+               +"\n3. Use TikTok filters & participate in challenges"
+               +"\n4. Pay attention to the background"
+               +"\n5. Use a versatile tool to edits videos");
     }//GEN-LAST:event_jButton7ActionPerformed
+
+    private void dltbuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dltbuttonActionPerformed
+       DefaultTableModel tblModel = (DefaultTableModel) jTable1.getModel();
+       if(jTable1.getSelectedRow()==-1){
+           if(jTable1.getRowCount()==0){
+               
+               JOptionPane.showMessageDialog(null,"No data to delete", "TikTok", JOptionPane.OK_OPTION);
+           }else{
+               JOptionPane.showMessageDialog(null,"Select a row to delete","TikTok",JOptionPane.OK_OPTION);
+               
+           }
+       }else{
+           tblModel.removeRow(jTable1.getSelectedRow());
+           
+           
+       }
+    
+        
+    }//GEN-LAST:event_dltbuttonActionPerformed
+
+    private void exitbuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitbuttonActionPerformed
+       JFrame frame = new JFrame();
+        
+        if(JOptionPane.showConfirmDialog(frame, "Confirm if you want to exit","TikTok",JOptionPane.YES_NO_OPTION)==JOptionPane.YES_NO_OPTION){
+            System.exit(0);
+        }
+    }//GEN-LAST:event_exitbuttonActionPerformed
+
+    private void importbuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_importbuttonActionPerformed
+       String filePath="C:\\Users\\user\\Documents\\NetBeansProjects\\GroupProjectMusic\\tiktokText.txt";     //PROBLEM KAT SINI//
+            File file = new File(filePath);
+          
+            try{
+                FileReader fr= new FileReader(file);
+                BufferedReader br = new BufferedReader(fr);
+                
+                 DefaultTableModel tblModel = (DefaultTableModel) jTable1.getModel();
+                 Object[] lines=br.lines().toArray();
+                 
+                 for(int i=0; i<lines.length; i++) {
+                     String[] row=lines[i].toString().split("");
+                     tblModel.addRow(row);
+                     
+                 }
+            }catch (FileNotFoundException ex) {
+                Logger.getLogger(TikTokGui.class.getName()).log(Level.SEVERE, null,ex);
+                
+            }
+    }//GEN-LAST:event_importbuttonActionPerformed
+
+    private void backbuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backbuttonActionPerformed
+        new groupMenu().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_backbuttonActionPerformed
+
+    private void importbutton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_importbutton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_importbutton1ActionPerformed
+
+    private void btnExportActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExportActionPerformed
+        // TODO add your handling code here:
+        String filePath="C:\\Users\\user\\Documents\\NetBeansProjects\\GroupProjectMusic\\tiktokText.txt";
+        File file=new File(filePath);
+       try {
+           FileWriter fw=new FileWriter(file);
+           BufferedWriter bw=new BufferedWriter(fw);
+           
+           for(int i=0; i<jTable1.getRowCount(); i++){
+               for(int j=0; j<jTable1.getColumnCount(); j++){
+                   bw.write(jTable1.getValueAt(i, j).toString()+" ");
+               }
+               bw.newLine();
+           }
+           bw.close();
+           fw.close();
+       } catch (IOException ex) {
+           Logger.getLogger(TikTokGui.class.getName()).log(Level.SEVERE, null, ex);
+       }
+    }//GEN-LAST:event_btnExportActionPerformed
 
    
     public static void main(String args[]) {
@@ -506,9 +663,15 @@ public class TikTokGui extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton backbutton;
     private javax.swing.JTextField birth;
     private javax.swing.JLabel birthlab;
+    private javax.swing.JButton btnExport;
+    private javax.swing.JButton dltbutton;
     private javax.swing.JTextField email;
+    private javax.swing.JButton exitbutton;
+    private javax.swing.JButton importbutton;
+    private javax.swing.JButton importbutton1;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton2;

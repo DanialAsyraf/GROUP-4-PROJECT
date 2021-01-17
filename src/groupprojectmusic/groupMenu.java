@@ -44,6 +44,7 @@ public class groupMenu extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(74, 31, 61));
 
+        btnMusic.setBackground(new java.awt.Color(255, 153, 153));
         btnMusic.setText("MUSIC");
         btnMusic.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -66,6 +67,11 @@ public class groupMenu extends javax.swing.JFrame {
         });
 
         btnShort.setText("Short Video");
+        btnShort.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnShortActionPerformed(evt);
+            }
+        });
 
         btnTiktok.setText("Tik Tok");
         btnTiktok.addActionListener(new java.awt.event.ActionListener() {
@@ -107,7 +113,7 @@ public class groupMenu extends javax.swing.JFrame {
         jPanel3.setBackground(new java.awt.Color(255, 153, 153));
 
         jLabel1.setFont(new java.awt.Font("The Bold Font", 0, 24)); // NOI18N
-        jLabel1.setText("              MAIN MENU");
+        jLabel1.setText("  MUSIC & VIDEO MENU");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -177,6 +183,12 @@ public class groupMenu extends javax.swing.JFrame {
         new GUI2().setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_btnDramaActionPerformed
+
+    private void btnShortActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnShortActionPerformed
+        // TODO add your handling code here:
+        new MainFrame().setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_btnShortActionPerformed
 
     /**
      * @param args the command line arguments

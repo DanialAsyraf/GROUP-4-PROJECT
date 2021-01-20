@@ -95,5 +95,14 @@ public class GroupProjectMusic {
         p3.sum(26,20);
         p3.recommendedSong("Canon Rock","River flows in you");
     }
+    public ArrayList<String> getGenre(){
+        ArrayList<String> genre=new ArrayList<String>();
+        genre.add("Punk Rock");
+        genre.add("Pop Rock");
+        genre.add("Country");
+        genre.add("Instrumental");
+
+        return (genre);
+    }
     
 }

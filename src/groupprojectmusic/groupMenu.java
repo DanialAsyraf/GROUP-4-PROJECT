@@ -5,6 +5,8 @@
  */
 package groupprojectmusic;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author user
@@ -34,6 +36,7 @@ public class groupMenu extends javax.swing.JFrame {
         btnDrama = new javax.swing.JButton();
         btnShort = new javax.swing.JButton();
         btnTiktok = new javax.swing.JButton();
+        btnExit = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
 
@@ -80,6 +83,13 @@ public class groupMenu extends javax.swing.JFrame {
             }
         });
 
+        btnExit.setText("EXIT");
+        btnExit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnExitActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -93,6 +103,10 @@ public class groupMenu extends javax.swing.JFrame {
                     .addComponent(btnMusic, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnTiktok, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnExit)
+                .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -107,7 +121,9 @@ public class groupMenu extends javax.swing.JFrame {
                 .addComponent(btnShort)
                 .addGap(18, 18, 18)
                 .addComponent(btnTiktok)
-                .addContainerGap(180, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 146, Short.MAX_VALUE)
+                .addComponent(btnExit)
+                .addContainerGap())
         );
 
         jPanel3.setBackground(new java.awt.Color(255, 153, 153));
@@ -180,7 +196,7 @@ public class groupMenu extends javax.swing.JFrame {
 
     private void btnDramaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDramaActionPerformed
         // TODO add your handling code here:
-        new GUI2().setVisible(true);
+        new Drama().setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_btnDramaActionPerformed
 
@@ -189,6 +205,13 @@ public class groupMenu extends javax.swing.JFrame {
         new MainFrame().setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_btnShortActionPerformed
+
+    private void btnExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExitActionPerformed
+        // TODO add your handling code here:
+        if (JOptionPane.showConfirmDialog(this,"Are you sure you want to exit?","Confirm Exit",JOptionPane.YES_NO_OPTION) == JOptionPane.YES_NO_OPTION){
+        System.exit(0);
+        }
+    }//GEN-LAST:event_btnExitActionPerformed
 
     /**
      * @param args the command line arguments
@@ -227,6 +250,7 @@ public class groupMenu extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnDrama;
+    private javax.swing.JButton btnExit;
     private javax.swing.JButton btnMovie;
     private javax.swing.JButton btnMusic;
     private javax.swing.JButton btnShort;

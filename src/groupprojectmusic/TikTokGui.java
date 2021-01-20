@@ -589,7 +589,7 @@ public class TikTokGui extends javax.swing.JFrame {
                  Object[] lines=br.lines().toArray();
                  
                  for(int i=0; i<lines.length; i++) {
-                     String[] row=lines[i].toString().split("");
+                     String[] row=lines[i].toString().split(" ");
                      tblModel.addRow(row);
                      
                  }

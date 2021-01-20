@@ -28,6 +28,8 @@ public class musicGUI extends javax.swing.JFrame {
      */
     public musicGUI() {
         initComponents();
+        /*GroupProjectMusic t=new GroupProjectMusic();
+        ArrayList<String>arrlist=t.getGenre(); */
     }
 
     /**
@@ -409,6 +411,7 @@ public class musicGUI extends javax.swing.JFrame {
     private void btnPunkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPunkActionPerformed
         // TODO add your handling code here:
         JOptionPane.showMessageDialog(this,"Punk Rock"+"\n Song Title: I wanna be sedated"+"\nArtist : Ramones"+"\nAlbum: The Greatest Hits"+"\nDate Released : 14 April 2004"+"\nPrice : RM45.60"+"\nPlatform: "+"\n1.Youtube"+"\n2.Apple Music"+"\n3. Joox");
+        /*JOptionPane.showMessageDialog(this,arrlist);*/
     }//GEN-LAST:event_btnPunkActionPerformed
 
     private void btnPopActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPopActionPerformed

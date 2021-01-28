@@ -9,7 +9,10 @@ package groupprojectmusic;
  *
  * @author user
  */
-public class Country extends PopRock{
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+import javax.swing.ImageIcon;
+public class Country extends Music{
     String songTitle,artist,album;
     double price;
     private String dateReleased;
@@ -18,23 +21,20 @@ public class Country extends PopRock{
         this.songTitle="Come on Over";
         this.artist="Shania Twain";
         this.album="The Country Hits";
+        this.dateReleased="27th February 1998";
+        this.price=13.70;
     }
-    public void printSong(){
+    
+    private JFrame frame;
+    
+    public void printCountry(){
+        
+        ImageIcon country=new ImageIcon("countryalbum.png");
+        JOptionPane.showMessageDialog(null," ","Display Country Album",JOptionPane.INFORMATION_MESSAGE,country);
+        
+        frame= new JFrame("Country Info");
         Country obj1=new Country();
-        System.out.println("Song Title: "+obj1.songTitle);
+        JOptionPane.showMessageDialog(frame,"Country"+"\nRelated Song:"+obj1.songTitle+"\nArtist :"+obj1.artist+"\nAlbum:"+obj1.album+"\nDate Released :"+obj1.dateReleased+"\nPrice of album: RM"+obj1.price+"\nRecommended Song:"+"\n1.Up!"+"\n2.Take Me Home"+"\nPlatform: "+"\n1.Youtube"+"\n2.Apple Music"+"\n3. Joox");
+        
     }
-    public void printArtist(){
-        Country obj2=new Country();
-        System.out.println("Artist: "+obj2.artist);
-    }
-    public void printAlbum(){
-        Country obj3=new Country();
-        System.out.println("Album Title: "+obj3.album);
-    }
-    public void setDateReleased(String newDate){
-        dateReleased=newDate;
-    }
-    public String getDateReleased(){
-        return dateReleased;
-    }    
 }

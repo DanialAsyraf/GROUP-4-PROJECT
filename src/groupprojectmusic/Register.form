@@ -57,12 +57,12 @@
                       </Group>
                       <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="buttonDelete" max="32767" attributes="0"/>
                           <Component id="buttonImport" max="32767" attributes="0"/>
+                          <Component id="buttonDelete" max="32767" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
-                      <Component id="buttonPrint" min="-2" pref="95" max="-2" attributes="0"/>
-                      <EmptySpace min="0" pref="27" max="32767" attributes="0"/>
+                      <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
+                      <Component id="buttonPrint" min="-2" pref="114" max="-2" attributes="0"/>
+                      <EmptySpace min="0" pref="13" max="32767" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
@@ -107,7 +107,7 @@
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="buttonRegister" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="buttonDelete" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="buttonPrint" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
+                                  <Component id="buttonPrint" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
@@ -201,6 +201,9 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="Name">
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="NameActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="Age">
     </Component>
@@ -322,6 +325,9 @@
     </Component>
     <Component class="javax.swing.JButton" name="btnBack">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="11" style="1"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Back"/>
       </Properties>
       <Events>

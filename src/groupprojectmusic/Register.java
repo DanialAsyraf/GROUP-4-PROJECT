@@ -97,6 +97,12 @@ public class Register extends javax.swing.JFrame {
         jLabel5.setFont(new java.awt.Font("Calibri", 0, 20)); // NOI18N
         jLabel5.setText("Genre selected :");
 
+        Name.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                NameActionPerformed(evt);
+            }
+        });
+
         buttonRegister.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
         buttonRegister.setText("Register");
         buttonRegister.addActionListener(new java.awt.event.ActionListener() {
@@ -154,6 +160,7 @@ public class Register extends javax.swing.JFrame {
             }
         });
 
+        btnBack.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         btnBack.setText("Back");
         btnBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -199,11 +206,11 @@ public class Register extends javax.swing.JFrame {
                             .addComponent(buttonReset, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(38, 38, 38)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(buttonDelete, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(buttonImport, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(37, 37, 37)
-                        .addComponent(buttonPrint, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 27, Short.MAX_VALUE))
+                            .addComponent(buttonImport, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(buttonDelete, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(32, 32, 32)
+                        .addComponent(buttonPrint, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 13, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(btnBack, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -239,7 +246,7 @@ public class Register extends javax.swing.JFrame {
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(buttonRegister)
                                     .addComponent(buttonDelete)
-                                    .addComponent(buttonPrint, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(buttonPrint))
                                 .addGap(41, 41, 41)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(buttonReset)
@@ -266,9 +273,6 @@ public class Register extends javax.swing.JFrame {
      });
      
      JOptionPane.showMessageDialog(this,"Successfully Registered!"); 
-           
- 
-     
     }//GEN-LAST:event_buttonRegisterActionPerformed
 
     private void buttonResetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonResetActionPerformed
@@ -342,13 +346,11 @@ public class Register extends javax.swing.JFrame {
        catch (IOException ex){
          Logger.getLogger(Register.class.getName()).log(Level.SEVERE,null,ex);
        }
-       
-       
-       
-       
-       
-       
     }//GEN-LAST:event_buttonPrintActionPerformed
+
+    private void NameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_NameActionPerformed
 
     /**
      * @param args the command line arguments

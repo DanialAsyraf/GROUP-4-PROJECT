@@ -5,6 +5,10 @@
  */
 package groupprojectmusic;
 
+import javax.swing.ImageIcon;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author user
@@ -18,23 +22,18 @@ public class Instrumental extends Country{
         this.songTitle="Canon in D";
         this.artist="Sungha Jung";
         this.album="The Greteast Fingerstyle of all time!";
+        this.dateReleased="27th December 2007";
+        this.price=13.70;
     }
-    public void printSong(){
+    private JFrame frame;
+    
+    public void printInstrumental(){
+        
+        ImageIcon inst=new ImageIcon("instalbum.png");
+        JOptionPane.showMessageDialog(null," ","Display Instrumental Album",JOptionPane.INFORMATION_MESSAGE,inst);
+        
+        frame= new JFrame("Instrumental Info");
         Instrumental obj1=new Instrumental();
-        System.out.println("Song Title: "+obj1.songTitle);
-    }
-    public void printArtist(){
-        Instrumental obj2=new Instrumental();
-        System.out.println("Artist: "+obj2.artist);
-    }
-    public void printAlbum(){
-        Instrumental obj3=new Instrumental();
-        System.out.println("Album Title: "+obj3.album);
-    }
-    public void setDateReleased(String newDate){
-        dateReleased=newDate;
-    }
-    public String getDateReleased(){
-        return dateReleased;
+        JOptionPane.showMessageDialog(frame,"Instrumental"+"\nRelated Song:"+obj1.songTitle+"\nArtist :"+obj1.artist+"\nAlbum:"+obj1.album+"\nDate Released :"+obj1.dateReleased+"\nPrice of album: RM"+obj1.price+"\nRecommended Song:"+"\n1.Canon Rock"+"\n2.River flows in you"+"\nPlatform: "+"\n1.Youtube"+"\n2.Apple Music"+"\n3. Joox");
     }    
 }

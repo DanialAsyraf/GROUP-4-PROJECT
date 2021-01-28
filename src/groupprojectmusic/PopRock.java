@@ -5,12 +5,16 @@
  */
 package groupprojectmusic;
 
+import javax.swing.ImageIcon;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author user
  */
 public class PopRock extends Music{
-   String songTitle,artist,album;
+    String songTitle,artist,album;
     double price;
     private String dateReleased;
     
@@ -18,27 +22,18 @@ public class PopRock extends Music{
         this.songTitle="Iris";
         this.artist="Goo Goo Dolls";
         this.album="The Greatest Hits";
+        this.dateReleased="26th May 2004";
+        this.price=13.70;
     }
-    public void printSong(){
+    private JFrame frame;
+    
+    public void printPopRock(){
+        
+        ImageIcon pop=new ImageIcon("popalbum.png");
+        JOptionPane.showMessageDialog(null," ","Display Pop Rock Album",JOptionPane.INFORMATION_MESSAGE,pop);
+        
+        frame= new JFrame("Pop Rock Info");
         PopRock obj1=new PopRock();
-        System.out.println("Song Title: "+obj1.songTitle);
-    }
-    public void printArtist(){
-        PopRock obj2=new PopRock();
-        System.out.println("Artist: "+obj2.artist);
-    }
-    public void printAlbum(){
-        PopRock obj3=new PopRock();
-        System.out.println("Album Title: "+obj3.album);
-    }
-    public void setDateReleased(String newDate){
-        dateReleased=newDate;
-    }
-    public String getDateReleased(){
-        return dateReleased;
-    }   
-    //polymorphism
-    void recommendedSong(String recSong1,String recSong2){
-        System.out.println("Other related songs: "+recSong1+"||"+recSong2);
-    }    
+        JOptionPane.showMessageDialog(frame,"Pop Rock"+"\nRelated Song:"+obj1.songTitle+"\nArtist :"+obj1.artist+"\nAlbum:"+obj1.album+"\nDate Released :"+obj1.dateReleased+"\nPrice of album: RM"+obj1.price+"\nRecommended Song:"+"\n1.Bohemian Rhapsody"+"\n2.Shut up and Dance!"+"\nPlatform: "+"\n1.Youtube"+"\n2.Apple Music"+"\n3. Joox");
+    } 
 }

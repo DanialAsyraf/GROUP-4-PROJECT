@@ -11,7 +11,9 @@ package groupprojectmusic;
  */
 import javax.swing.JFrame;
 import java.util.Scanner;
+import javax.swing.JOptionPane;
 public class Music {
+    
     String musicPlatform,location;
     int year;
     
@@ -38,17 +40,6 @@ public class Music {
             System.out.println("Music genre available!");
     }        
     }
-    /*public void platform(){
-        Scanner scan1=new Scanner(System.in);
-        try{
-            System.out.println("Please input music platform: ");
-            String musicplatform=scan1.next();
-            System.out.println("Choosen boot size: "+musicplatform);
-        } catch(Exception e){
-            System.out.println("Something went wrong!");
-        }
-        
-    }*/
     public void printMethod1(){
         Music obj1=new Music();
         System.out.println("Platform: "+obj1.musicPlatform+"\n"+"Year of music: "+obj1.year+"\n"+"Location: "+obj1.location);
@@ -75,5 +66,21 @@ public class Music {
     //method overloading //calculate the price range
     void sum(int songPrice, long subscription){
         System.out.println("Total price of song including monthly subscription: RM"+(songPrice+subscription));
-    }  
+    }
+    
+    private JFrame frame;
+    
+    public void iExitSystem(){
+        
+        frame = new JFrame("Exit");
+        if (JOptionPane.showConfirmDialog(frame,"Are you sure you want to exit?","Confirm Exit",JOptionPane.YES_NO_OPTION) == JOptionPane.YES_NO_OPTION){
+        System.exit(0);
+        }
+    }
+    public void backButton(){
+        
+        /*frame = new JFrame();
+        new groupMenu2().setVisible(true);
+        frame.dispose();*/
+    }
 }

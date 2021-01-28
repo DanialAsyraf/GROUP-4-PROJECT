@@ -5,6 +5,10 @@
  */
 package groupprojectmusic;
 
+import javax.swing.ImageIcon;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author user
@@ -18,29 +22,18 @@ public class PunkRock extends Music{
         this.songTitle="I wanna be sedated";
         this.artist="Ramones";
         this.album="The Greatest Hits";
+        this.dateReleased="14 April 2004";
+        this.price=45.60;
     }
-    public void printSong(){
+    private JFrame frame;
+    
+    public void printPunkRock(){
+        
+        ImageIcon punk=new ImageIcon("punkalbum.png");
+        JOptionPane.showMessageDialog(null," ","Display Punk Rock Album",JOptionPane.INFORMATION_MESSAGE,punk);
+        
+        frame= new JFrame("Punk Rock Info");
         PunkRock obj1=new PunkRock();
-        System.out.println("Song Title: "+obj1.songTitle);
-    }
-    public void printArtist(){
-        PunkRock obj2=new PunkRock();
-        System.out.println("Artist: "+obj2.artist);
-    }
-    public void printAlbum(){
-        PunkRock obj3=new PunkRock();
-        System.out.println("Album Title: "+obj3.album);
-    }
-    public void setDateReleased(String newDate){
-        dateReleased=newDate;
-    }
-    public String getDateReleased(){
-        return dateReleased;
-    }
-    public void setPrice(double newPrice){
-        price=newPrice;
-    }
-    public double getPrice(){
-        return price;
+        JOptionPane.showMessageDialog(frame,"Punk Rock"+"\nRecommended Song:"+obj1.songTitle+"\nArtist :"+obj1.artist+"\nAlbum:"+obj1.album+"\nDate Released :"+obj1.dateReleased+"\nPrice of album: RM"+obj1.price+"\nPlatform: "+"\n1.Youtube"+"\n2.Apple Music"+"\n3. Joox");
     }  
 }

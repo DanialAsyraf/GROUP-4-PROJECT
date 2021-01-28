@@ -3,6 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+// NOTE FOR SIR: Class ni saya tak pakai sir tapi taknak delete sebab takut ada effect class name
 package groupprojectmusic;
 
 /**
@@ -44,7 +45,7 @@ public class GroupProjectMusic {
         System.out.println("++++Punk Rock++++");
         PunkRock p=new PunkRock();
         p.printMethod1();
-        p.printSong();
+        /*p.printSong();
         p.printArtist();
         p.printAlbum();
         p.setDateReleased("14th April 2010");
@@ -102,7 +103,7 @@ public class GroupProjectMusic {
         genre.add("Country");
         genre.add("Instrumental");
 
-        return (genre);
+        return (genre);*/
     }
     
 }
